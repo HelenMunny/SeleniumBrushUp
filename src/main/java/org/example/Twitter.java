@@ -1,6 +1,7 @@
 package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -24,6 +25,9 @@ public class Twitter {
         driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys("Amader1Gram");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//span[contains(text(),\"Log in\")]")).click();
+
+
+
 
 //       login should be completed, if not confirmation code will be asked or failed login due to incorrect password/username
     }
