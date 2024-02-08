@@ -3,16 +3,15 @@ package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
 public class ImplicitWaits {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\mahmu\\IdeaProjects\\SeleniumBrushUp\\src\\main\\resources\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary("C:\\Users\\mahmu\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
-        WebDriver driver = new ChromeDriver(options);
+//        System.setProperty("webdriver.chrome.driver","C:\\Users\\mahmu\\IdeaProjects\\SeleniumBrushUp\\src\\main\\resources\\chromedriver.exe");
+//        ChromeOptions options = new ChromeOptions();
+//        options.setBinary("C:\\Users\\mahmu\\Downloads\\chrome-win64\\chrome-win64\\chrome.exe");
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
 //        implicit wait: implicit wait is a global wait that will be applicable for the all elements of the file. The maximum wait time here is 10 seconds
