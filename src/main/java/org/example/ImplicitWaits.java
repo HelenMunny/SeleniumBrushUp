@@ -25,7 +25,7 @@ public class ImplicitWaits {
         driver.findElement(By.xpath("//span[contains(text(), 'Next')]")).click();     // if there is no unique identifier available, we can narrow down our search through this method
         driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys("Amader1Gram");
         driver.findElement(By.xpath("//span[contains(text(),\"Log in\")]")).click();
-
+        driver.quit();
 
     }
 }

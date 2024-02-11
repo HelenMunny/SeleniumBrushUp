@@ -27,5 +27,6 @@ public class FindElements {
         for(WebElement a:list){
             System.out.println(a.isEnabled());
         }
+        driver.quit();
     }
 }

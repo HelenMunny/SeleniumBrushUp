@@ -23,5 +23,6 @@ public class Twitter {
 
 
 //       login should be completed, if not confirmation code will be asked or failed login due to incorrect password/username
+        driver.quit();
     }
 }

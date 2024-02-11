@@ -28,5 +28,6 @@ public class WindowPractice {
 
         WebElement heading = driver.findElement(By.xpath("//h1[@id=\"sampleHeading\"]"));
         System.out.println(heading.getText());
+        driver.quit();
     }
 }

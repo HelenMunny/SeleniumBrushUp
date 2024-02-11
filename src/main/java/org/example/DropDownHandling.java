@@ -30,6 +30,7 @@ public class DropDownHandling {
         Thread.sleep(2000);
         WebElement searchBtn = driver.findElement(By.xpath("//input[@id=\"gh-btn\"]"));
         searchBtn.click();
+        driver.quit();
 
 
     }

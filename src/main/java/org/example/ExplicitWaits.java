@@ -25,6 +25,6 @@ public class ExplicitWaits {
         WebElement link = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@jsname=\"UWckNb\"][position()=1]")));
         link.click();
 //        here this might take some time to display the results available for my search. We can use explicit wait here for a specific condition
-
+        driver.quit();
     }
 }

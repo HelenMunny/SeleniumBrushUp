@@ -27,6 +27,7 @@ public class ActionsPractice {
         Thread.sleep(2000);
         WebElement videoGames = driver.findElement(By.xpath("//a[@_sp=\"p4375194.m1380.l3260\"]"));
         videoGames.click();
+        driver.quit();
 
 
     }

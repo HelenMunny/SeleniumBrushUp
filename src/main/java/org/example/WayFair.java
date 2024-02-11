@@ -16,7 +16,7 @@ public class WayFair {
 
         WebElement heading = driver.findElement(By.xpath("//div[@data-enzyme-id=\"titleBlockOnInfoBlock\"]/header/h1"));
         System.out.println(heading.getText());
-
+        driver.quit();
 
     }
 }
