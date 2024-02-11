@@ -29,7 +29,7 @@ public class FramesPractice {
         Thread.sleep(3000);
 
         textBox.sendKeys(" World");
-//        driver.quit();
+        driver.quit();
 
     }
 }
