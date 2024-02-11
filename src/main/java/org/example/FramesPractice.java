@@ -28,7 +28,7 @@ public class FramesPractice {
         driver.switchTo().defaultContent();
         Thread.sleep(3000);
 
-        textBox.sendKeys(" World");
+        textBox.sendKeys(" There How are you");
         driver.quit();
 
     }
