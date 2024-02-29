@@ -13,10 +13,6 @@ public class FindElements {
         driver.get("https://www.ebay.com/");
 
         List<WebElement> list = driver.findElements(By.xpath("//li[@class=\"gf-li\"]"));
-//        iterating over list of webelement through for loop
-//        for(int i=0; i< list.size();i++){
-//            System.out.println(list.get(i).getText());
-//        }
 
 //        advanced for loop
         for(WebElement a:list){
