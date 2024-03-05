@@ -13,8 +13,11 @@ public class Practice {
         driver.manage().window().maximize();
         driver.get("https://www.ebay.com/");
 
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        System.out.println(links.size());
+        List<WebElement> links = driver.findElements(By.xpath("//footer[@id=\"glbfooter\"] //a [@class=\"thrd\"]"));
+        for (WebElement item:links){
+            System.out.println(item.getText());
+        }
+
 
     }
 }
