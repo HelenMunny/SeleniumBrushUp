@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,7 @@ public class WindowPractice {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    //implicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.get("https://demo.automationtesting.in/Windows.html");
 
         WebElement btn = driver.findElement(By.xpath("//div[@class=\"tabpane pullleft\"]/ul/li[1]"));

@@ -6,30 +6,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class FramesPractice {
     public static void main(String[] args) throws InterruptedException {
+//        nested iframe practice
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.hyrtutorials.com/p/frames-practice.html");
-        Thread.sleep(3000);
-
-        WebElement textBox = driver.findElement(By.id("name"));
-        textBox.sendKeys("Hello");
-        Thread.sleep(3000);
-
-        driver.switchTo().frame(driver.findElement(By.id("frm1")));
-        Thread.sleep(3000);
-        Select select = new Select(driver.findElement(By.id("course")));
-        select.selectByVisibleText("Java");
-        Thread.sleep(3000);
+        driver.get("https://demo.automationtesting.in/Frames.html");
+        driver.findElement(By.xpath("//div[@class=\"tabpane\"]/ul/li[2]/a")).click();
+        WebElement fr = driver.findElement(By.xpath("//div[@id=\"Multiple\"]/iframe"));
+        driver.switchTo().frame(fr);
+        System.out.println(driver.findElement(By.xpath("//div[@class=\"iframe-container\"]")).getText());
+        WebElement nested = driver.findElement(By.xpath("//div[@class=\"container iframes-page-container\"]/div/iframe"));
+        driver.switchTo().frame(nested);
+        List<WebElement> inputs = driver.findElements(By.tagName("input"));
+        inputs.get(0).sendKeys("Hello");
         driver.switchTo().defaultContent();
-        Thread.sleep(3000);
-
-        textBox.sendKeys(" There How are you");
-        driver.quit();
-
+        System.out.println(driver.getTitle());
     }
 }
