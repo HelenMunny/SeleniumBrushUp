@@ -10,24 +10,37 @@ import java.util.concurrent.TimeUnit;
 
 public class WindowPractice {
     public static void main(String[] args) {
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    //implicit wait
-        driver.get("https://demoqa.com/browser-windows");
+        driver.get("https://demo.automationtesting.in/Windows.html");
 
-        WebElement btn = driver.findElement(By.xpath("//button[@id=\"tabButton\"]"));
+        WebElement btn = driver.findElement(By.xpath("//div[@class=\"tabpane pullleft\"]/ul/li[1]"));
         btn.click();
+        WebElement openTab = driver.findElement(By.xpath("//div[@id=\"Tabbed\"]/a/button"));
+        openTab.click();
 
         String currTab = driver.getWindowHandle();
-        Set <String> allTabs = driver.getWindowHandles();
-        for(String i: allTabs){
-            if(i != currTab){
+        allTabs(driver,currTab);
+        System.out.println(driver.findElement(By.xpath("//p[@class=\"lead mb-0\"]")).getText());
+        driver.close();
+        driver.switchTo().window(currTab);
+        WebElement winBtn= driver.findElement(By.xpath("//div[@class=\"tabpane pullleft\"]/ul/li[3]"));
+        winBtn.click();
+        WebElement mulWinClick = driver.findElement(By.xpath("//div[@id=\"Multiple\"]/button"));
+        mulWinClick.click();
+        allTabs(driver,currTab);
+
+    }
+
+    public static void allTabs(WebDriver driver, String currTab){
+        Set<String> allTabs = driver.getWindowHandles();
+        for(String i:allTabs){
+            if(currTab != i){
                 driver.switchTo().window(i);
+                System.out.println(driver.getTitle());
             }
         }
-
-        WebElement heading = driver.findElement(By.xpath("//h1[@id=\"sampleHeading\"]"));
-        System.out.println(heading.getText());
-        driver.quit();
     }
 }
