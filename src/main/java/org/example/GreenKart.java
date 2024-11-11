@@ -4,24 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
-public class Practice {
+public class GreenKart {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
-       driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
-       driver.manage().window().maximize();
+        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+        driver.manage().window().maximize();
 
-       addItems(driver);
-       checkout(driver);
+        addItems(driver);
+        checkout(driver);
 
 
     }
@@ -91,25 +87,19 @@ public class Practice {
     }
 
 
-public static void checkbox(WebDriver driver){
-    WebElement checkbox = driver.findElement(By.xpath("//input[@class=\"chkAgree\"]"));
-    WebElement proceedBtn = driver.findElement(By.xpath("//button"));
-    WebElement error = driver.findElement(By.xpath("//span[@class=\"errorAlert\"]"));
-    WebElement errorMsg = driver.findElement(By.xpath("//span[@class=\"errorAlert\"]/b"));
+    public static void checkbox(WebDriver driver){
+        WebElement checkbox = driver.findElement(By.xpath("//input[@class=\"chkAgree\"]"));
+        WebElement proceedBtn = driver.findElement(By.xpath("//button"));
+        WebElement error = driver.findElement(By.xpath("//span[@class=\"errorAlert\"]"));
+        WebElement errorMsg = driver.findElement(By.xpath("//span[@class=\"errorAlert\"]/b"));
 //    checkbox.click();
-    if(!checkbox.isSelected()){
-        proceedBtn.click();
-        System.out.println(errorMsg.getText());
-        checkbox.click();
-        proceedBtn.click();
+        if(!checkbox.isSelected()){
+            proceedBtn.click();
+            System.out.println(errorMsg.getText());
+            checkbox.click();
+            proceedBtn.click();
+        }
+
     }
 
 }
-
-
-
-
-}
-
-
-
